@@ -79,7 +79,7 @@ def get_weather_info(city: str) -> str:
 if __name__ == "__main__":
     logger.info(f"Running MCP server on port {port}.")
     try:
-        mcp.run(transport="sse", port=port)
+        mcp.run(transport="sse", host="0.0.0.0", port=port)
     except Exception as e:
         logger.error(f"Server error: {str(e)}")
         sys.exit(1)
